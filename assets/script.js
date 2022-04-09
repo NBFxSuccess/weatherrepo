@@ -5,7 +5,8 @@ let searchBtn = document.getElementById("search")
 let temperature = document.getElementById("temperature")
 let humidity = document.getElementById("humidity")
 let wind = document.getElementById("wind")
-
+let uvIndex = document.getElementById("uvindex")
+let currentDate = moment().format('l')
 searchBtn.addEventListener("click",searchbtn)
 function searchbtn() {
 
@@ -14,7 +15,7 @@ function searchbtn() {
     .then(geoResponse => geoResponse.json())
     .then(geoData =>{
         console.log(geoData)
-        cityname.innerHTML = geoData[0].name;
+        cityname.innerHTML = geoData[0].name + " (" + currentDate + ")";
     return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=${apikey}`);
 
     
@@ -29,7 +30,21 @@ return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityData.cit
 .then(response => response.json())
 .then(forecastData =>{
     console.log(forecastData)
+    let tempConverted = 1.8*(forecastData.current.temp - 273) + 32
+    temperature.innerHTML = "Temperature: " + Math.round(tempConverted * 100)/100 + "°F";
+    humidity.innerHTML = "Humidity: " + forecastData.current.humidity + "%";
+    uvIndex.innerHTML = "UV Index: " + forecastData.current.uvi;
+    wind.innerHTML = "Wind: " + forecastData.current.wind_speed + "MPH";
 
 })
 }
 
+
+
+// Depreciated code
+searcharea.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    searchBtn.click();
+  }
+});
