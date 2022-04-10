@@ -30,4 +30,23 @@ h5 {
 }
 .lol {
     background-color:rgb(145, 145, 145);
+    min-width:150px;
 }
+hr {
+    min-height:200px;
+}
+#top1 {
+    margin-left:30px;
+    background-color:rgb(145, 145, 145);
+}
+#forecast {
+margin-left:30px;
+color:rgb(122, 116, 116);
+}
+
+@media only screen and (max-width: 600px) {
+    #forecastcontainer {
+      display:flex;
+      flex-direction:column;
+    }
+  }

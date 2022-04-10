@@ -1,4 +1,4 @@
-// Delcaring too many variables.
+// Delcaring too many variables... Will possibly refactor to for loops 🤷‍♂️
 let searcharea = document.getElementById("textarea");
 let firstDayTempEl = document.getElementById("firstdaytemp");
 let secondDayTempEl = document.getElementById("seconddaytemp");
@@ -35,11 +35,11 @@ let wind = document.getElementById("wind")
 let uvIndex = document.getElementById("uvindex")
 let currentDate = moment().format('l')
 const now = moment();
-firstDayEl.innerText = now.add(1, 'days').format('dddd');
-secondDayEl.innerText = now.add(1, 'days').format('dddd');
-thirdDayEl.innerText = now.add(1, 'days').format('dddd');
-fourthDayEl.innerText = now.add(1, 'days').format('dddd');
-fifthDayEl.innerText = now.add(1, 'days').format('dddd');
+firstDayEl.innerText = now.add(1, 'days').format('l');
+secondDayEl.innerText = now.add(1, 'days').format('l');
+thirdDayEl.innerText = now.add(1, 'days').format('l');
+fourthDayEl.innerText = now.add(1, 'days').format('l');
+fifthDayEl.innerText = now.add(1, 'days').format('l');
 searchBtn.addEventListener("click",searchbtn)
 currentIcon.hidden = true;
 firstIcon.hidden = true;
@@ -60,22 +60,6 @@ function searchbtn() {
 .then(cityData =>{
     console.log(cityData)
 
-    let firstDayCode = `${cityData.list[1].weather[0].icon}`;
-    let firstDayUrl = `http://openweathermap.org/img/wn/${firstDayCode}@2x.png`;
-    let secondDayCode = `${cityData.list[2].weather[0].icon}`;
-    let secondDayUrl = `http://openweathermap.org/img/wn/${secondDayCode}@2x.png`;
-    let thirdDayCode = `${cityData.list[3].weather[0].icon}`;
-    let thirdDayUrl = `http://openweathermap.org/img/wn/${thirdDayCode}@2x.png`;
-    let fourthDayCode = `${cityData.list[4].weather[0].icon}`;
-    let fourthDayUrl = `http://openweathermap.org/img/wn/${fourthDayCode}@2x.png`;
-    let fifthDayCode = `${cityData.list[5].weather[0].icon}`;
-    let fifthDayUrl = `http://openweathermap.org/img/wn/${fifthDayCode}@2x.png`;
-    firstIcon.setAttribute("src",firstDayUrl)
-    secondIcon.setAttribute("src",secondDayUrl)
-    thirdIcon.setAttribute("src",thirdDayUrl)
-    fourthIcon.setAttribute("src",fourthDayUrl)
-    fifthIcon.setAttribute("src",fifthDayUrl)
-
 
 return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityData.city.coord.lat}&lon=${cityData.city.coord.lon}&appid=${apikey}`);
 })
@@ -93,6 +77,22 @@ return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityData.cit
     fourthIcon.hidden = false;
     fifthIcon.hidden = false;
     console.log(forecastData)
+    
+    let firstDayCode = `${forecastData.daily[1].weather[0].icon}`;
+    let firstDayUrl = `http://openweathermap.org/img/wn/${firstDayCode}@2x.png`;
+    let secondDayCode = `${forecastData.daily[2].weather[0].icon}`;
+    let secondDayUrl = `http://openweathermap.org/img/wn/${secondDayCode}@2x.png`;
+    let thirdDayCode = `${forecastData.daily[3].weather[0].icon}`;
+    let thirdDayUrl = `http://openweathermap.org/img/wn/${thirdDayCode}@2x.png`;
+    let fourthDayCode = `${forecastData.daily[4].weather[0].icon}`;
+    let fourthDayUrl = `http://openweathermap.org/img/wn/${fourthDayCode}@2x.png`;
+    let fifthDayCode = `${forecastData.daily[5].weather[0].icon}`;
+    let fifthDayUrl = `http://openweathermap.org/img/wn/${fifthDayCode}@2x.png`;
+    firstIcon.setAttribute("src",firstDayUrl)
+    secondIcon.setAttribute("src",secondDayUrl)
+    thirdIcon.setAttribute("src",thirdDayUrl)
+    fourthIcon.setAttribute("src",fourthDayUrl)
+    fifthIcon.setAttribute("src",fifthDayUrl)
     firstHumidityEl.innerHTML = "Humidity:" + forecastData.daily[1].humidity + "%";
     secondHumidityEl.innerHTML = "Humidity:" + forecastData.daily[2].humidity + "%";
     thirdHumidityEl.innerHTML = "Humidity:" + forecastData.daily[3].humidity + "%";
