@@ -35,11 +35,11 @@ let wind = document.getElementById("wind")
 let uvIndex = document.getElementById("uvindex")
 let currentDate = moment().format('l')
 const now = moment();
-firstDayEl.innerText = now.add(1, 'days').format('L');
-secondDayEl.innerText = now.add(1, 'days').format('L');
-thirdDayEl.innerText = now.add(1, 'days').format('L');
-fourthDayEl.innerText = now.add(1, 'days').format('L');
-fifthDayEl.innerText = now.add(1, 'days').format('L');
+firstDayEl.innerText = now.add(1, 'days').format('dddd');
+secondDayEl.innerText = now.add(1, 'days').format('dddd');
+thirdDayEl.innerText = now.add(1, 'days').format('dddd');
+fourthDayEl.innerText = now.add(1, 'days').format('dddd');
+fifthDayEl.innerText = now.add(1, 'days').format('dddd');
 searchBtn.addEventListener("click",searchbtn)
 currentIcon.hidden = true;
 firstIcon.hidden = true;
