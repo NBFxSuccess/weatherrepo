@@ -14,3 +14,17 @@ header {
     background-color:rgb(71, 71, 108);
     height:100px;
 }
+
+h5 {
+
+}
+.daytitle {
+    font-weight:bold;
+}
+.info {
+    font-size:14px;
+    font-weight:500
+}
+.this {
+    border-style:solid;
+}

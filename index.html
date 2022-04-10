@@ -26,28 +26,63 @@
   <header class="m-2">
       <h2 class="text-center pt-4">Super Awesome Weather</h2>
 </header>
-
 <body class="bg-dark">
-    <section class="d-flex m-4 mt-5">
-    <div class="form-group m-center justify-content-left">
-    <input id="textarea" style="color:black;" class="form-control col-12"  rows="2"></input><button id="search" class="btn btn-success col-12 mt-3" type="button">🔍</button>
-    </div>
-    </div>
-</div>
 
-<section>
-    </section>
-<div class="alert alert-dark ml-5 col-5" role="alert">
-    <h4 id="cityname" class="alert-heading"></h4><div id="icondiv"><img id="currenticon" width="60px" height="60px" src="" alt="Weather icon"></div>
-    <section class="d-flex flex-column">
-    <a id="temperature"></a>
-    <a id="wind"></a>
-    <a id="humidity"></a>
-    <a id="uvindex"></a>
-    </section>
-  </div>
+    <section class="d-flex this">
+    <section class="d-flex mt-3 this col-2">
+        <div class="form-group m-center justify-content-left">
+            <input id="textarea" style="color:black;" class="form-control col-12"  rows="2"></input><button id="search" class="btn btn-success col-12 mt-4" type="button">🔍</button>
+        </section>
+        <div class="alert alert-secondary ml-5 col-9 h-25 mt-3" role="alert">
+            <h4 id="cityname" class="alert-heading"></h4><div id="icondiv"><img id="currenticon" width="60px" height="60px" src="" alt="Weather icon"></div>
+            <a class="info" id="temperature"></a><br>
+            <a class="info" id="wind"></a><br>
+            <a class="info" id="humidity"></a><br>
+            <a class="info" id="uvindex"></a><br>
+        </div>
+        </section>
+
+        <section class="d-flex">
+    <section class="d-flex mt-3 this col-2">
+        <div class="form-group m-center justify-content-left">
+           <a>History Here</a>
+        </section>
+    <div class="alert alert-secondary ml-5 m-3 mt-4" role="alert">
+        <a class="daytitle text-center" id="firstday"></a><br>
+        <img id="firsticon" width="60px" height="60px" src="" alt="Weather icon"><br>
+        <a class="info" id="firstdaytemp"></a><br>
+        <a class="info" id="firstdaywind"></a><br>
+        <a class="info" id="firstdayhumidity"></a><br>
+    </div>
+    <div class="alert alert-secondary ml-2 mt-4 m-3" role="alert">
+        <a class="daytitle text-center" id="secondday"></a><br>
+        <img id="secondicon" width="60px" height="60px" src="" alt="Weather icon"><br>
+        <a class="info" id="seconddaytemp"></a><br>
+        <a class="info" id="seconddaywind"></a><br>
+        <a class="info" id="seconddayhumidity"></a><br>
+    </div>
+    <div class="alert alert-secondary ml-2 mt-4 m-3" role="alert">
+        <a class="daytitle text-center" id="thirdday"></a><br>
+        <img id="thirdicon" width="60px" height="60px" src="" alt="Weather icon"><br>
+        <a class="info" id="thirddaytemp"></a><br>
+        <a class="info" id="thirddaywind"></a><br>
+        <a class="info" id="thirddayhumidity"></a><br>
+    </div>
+    <div class="alert alert-secondary ml-2 mt-4 m-3" role="alert">
+        <a class="daytitle text-center" id="fourthday"></a><br>
+        <img id="fourthicon" width="60px" height="60px" src="" alt="Weather icon"><br>
+        <a class="info" id="fourthdaytemp"></a><br>
+        <a class="info" id="fourthdaywind"></a><br>
+        <a class="info" id="fourthdayhumidity"></a><br>
+    </div>
+    <div class="alert alert-secondary ml-2 mt-4 m-3" role="alert">
+        <a class="daytitle text-center" id="fifthday"></a><br>
+        <img id="fifthicon" width="60px" height="60px" src="" alt="Weather icon"><br>
+        <a class="info" id="fifthdaytemp"></a><br>
+        <a class="info" id="fifthdaywind"></a><br>
+        <a class="info" id="fifthdayhumidity"></a><br>
+    </div>
 </section>
-
     
     
     
