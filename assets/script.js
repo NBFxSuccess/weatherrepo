@@ -32,7 +32,7 @@ return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityData.cit
     currentIcon.hidden = false;
     console.log(forecastData)
     let tempConverted = 1.8*(forecastData.current.temp - 273) + 32
-    temperature.innerHTML = "Temperature: " + Math.round(tempConverted * 100)/100 + "°F";
+    temperature.innerHTML = "Temp: " + Math.round(tempConverted * 100)/100 + "°F";
     humidity.innerHTML = "Humidity: " + forecastData.current.humidity + "%";
     uvIndex.innerHTML = "UV Index: " + forecastData.current.uvi;
     wind.innerHTML = "Wind: " + forecastData.current.wind_speed + "MPH";
