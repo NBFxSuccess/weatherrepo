@@ -33,7 +33,9 @@ h5 {
     min-width:150px;
 }
 hr {
-    min-height:200px;
+   height:5px;
+   border-radius:15px;
+   background-color: #3a2f48;
 }
 #top1 {
     margin-left:30px;
@@ -48,5 +50,6 @@ color:rgb(122, 116, 116);
     #forecastcontainer {
       display:flex;
       flex-direction:column;
+      text-align:center;
     }
   }
