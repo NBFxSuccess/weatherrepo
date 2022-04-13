@@ -8,7 +8,7 @@ https://nbfxsuccess.github.io/weatherrepo/
 
 
 ## Screenshot
-![Weather App](/assets/Capture.png"Application Screenshot")
+![Weather App](/assets/Capture.png "Application Screenshot")
 
 
 ## License
