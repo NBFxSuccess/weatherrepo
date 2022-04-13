@@ -1,4 +1,4 @@
-// Delcaring too many variables... Will possibly refactor to for loops 🤷‍♂️
+// Delcaring too many variables... Will possibly refactor if I can figure out how 🤷‍♂️
 let searcharea = document.getElementById("textarea");
 let firstDayTempEl = document.getElementById("firstdaytemp");
 let secondDayTempEl = document.getElementById("seconddaytemp");
@@ -33,6 +33,7 @@ let humidity = document.getElementById("humidity")
 let wind = document.getElementById("wind")
 let uvIndex = document.getElementById("uvindex")
 let currentDate = moment().format('l')
+let searchHistoryButtons = document.getElementsByClassName("muchwow");
 const now = moment();
 const icons = ["",firstIcon,secondIcon,thirdIcon,fourthIcon,fifthIcon];
 searchBtn.addEventListener("click",searchbtn)
@@ -43,10 +44,37 @@ for (let i = 1; i <= 5; i++) {
     icons[i].hidden = true;
     dates[i].innerText = now.add(1, 'days').format('l');
     
+
 }
 
+for (let i = 0; i < searchHistoryButtons.length; i++) {
+    searchHistoryButtons[i].addEventListener('click', function() {
+        console.log("added");
+    }, false);
+    }
+    
 
-function searchbtn() {
+function writeAndCallHistory() {
+    let createHistory = document.createElement("button");
+    createHistory.addEventListener("click",function() {
+        searcharea.value = this.innerText;
+        searchbtn();
+    });
+    let history = document.getElementById("searchhistory");
+    createHistory.textContent = searcharea.value;
+    if (searcharea.value == "") {
+        createHistory.textContent = "Invalid";
+    }
+    createHistory.classList.add("btn");
+    createHistory.classList.add("btn-success");
+    createHistory.classList.add("m-1");
+    createHistory.classList.add("muchwow");
+
+    history.prepend(createHistory)
+
+}
+function searchbtn(event) {
+    writeAndCallHistory();
     var apikey = "235541ce3c85d08ad72e7b38fb766a37"
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searcharea.value}&appid=${apikey}`)
     .then(geoResponse => geoResponse.json())
