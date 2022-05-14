@@ -2,6 +2,13 @@
 
 Weather App utilizing Open Source Weather API by Nick Ferrer
 
+
+## Technologies Used
+* Bootstrap
+* CSS
+* JavaScript
+* HTML
+
 ## Deployed Application link
 
 https://nbfxsuccess.github.io/weatherrepo/
